@@ -1,12 +1,12 @@
-import { 
-    auth, 
-    createUserWithEmailAndPassword 
+import {
+    auth,
+    createUserWithEmailAndPassword
 } from './firebaseConfigure.js';
 
 const signBtn = document.getElementById("createAccount");
 const googleSignUpBtn = document.getElementById("googleSignUp");
 
-signBtn.addEventListener("click", async () => {
+signBtn.addEventListener("click", async() => {
     const name = document.getElementById("signup-name").value;
     const email = document.getElementById("signup-email").value;
     const password = document.getElementById("signup-password").value;
@@ -21,7 +21,7 @@ signBtn.addEventListener("click", async () => {
     successEl.style.display = "none";
     errorEl.style.display = "none";
 
-    // Validation
+
     if (name === "") {
         errorEl.style.display = "block";
         errorText.textContent = "Please enter your full name";
@@ -54,7 +54,7 @@ signBtn.addEventListener("click", async () => {
 
     try {
         await createUserWithEmailAndPassword(auth, email, password);
-        
+
         successEl.style.display = "block";
         successText.textContent = "Account created successfully! Redirecting to login...";
 
@@ -63,23 +63,14 @@ signBtn.addEventListener("click", async () => {
         document.getElementById("signup-email").value = "";
         document.getElementById("signup-password").value = "";
         document.getElementById("signup-confirm-password").value = "";
-        
+
         // Redirect to login page after success
         setTimeout(() => {
             window.location.href = "loginPage.html";
         }, 2000);
-        
+
     } catch (error) {
         errorEl.style.display = "block";
         errorText.textContent = error.message;
     }
-});
-
-// Google Sign Up functionality (placeholder - would need additional Firebase configuration)
-googleSignUpBtn.addEventListener("click", () => {
-    const errorEl = document.getElementById("signup-error");
-    const errorText = errorEl.querySelector("span");
-    
-    errorEl.style.display = "block";
-    errorText.textContent = "Google sign up functionality not yet implemented";
 });
