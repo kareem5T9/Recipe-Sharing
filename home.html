@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Sharing - Home</title>
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h2>
+            Current User:
+            <span id="currentUserName"></span>
+        </h2>
+
+        <button id="logOut" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Log Out
+        </button>
+
+        <!-- Recipes Display Page -->
+        <div id="recipes" class="page">
+            <div class="card">
+                <div class="page-title" style="justify-content: space-between">
+                    <div class="flex">
+                        <i class="fas fa-book-open"></i>
+                        <h2>Recipe Collection</h2>
+                    </div>
+                    <button class="btn btn-primary">
+                        <a href="addRecipePage.html" style="text-decoration: none; color: white;">
+                            <i class="fas fa-plus"></i> Add New Recipe
+                        </a>
+                    </button>
+                </div>
+                <p style="margin-bottom: 1.5rem; color: var(--gray)">
+                    Discover and share delicious recipes from our community
+                </p>
+
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="filter-category"><i class="fas fa-filter"></i> Category</label>
+                        <select id="filter-category" class="form-control">
+                            <option value="">All Categories</option>
+                            <option value="breakfast">Breakfast</option>
+                            <option value="lunch">Lunch</option>
+                            <option value="dinner">Dinner</option>
+                            <option value="dessert">Dessert</option>
+                            <option value="snacks">Snacks</option>
+                            <option value="drinks">Drinks</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-difficulty"><i class="fas fa-chart-line"></i> Difficulty</label>
+                        <select id="filter-difficulty" class="form-control">
+                            <option value="">All Levels</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-time"><i class="fas fa-clock"></i> Total Time</label>
+                        <select id="filter-time" class="form-control">
+                            <option value="">Any Time</option>
+                            <option value="0-30">Under 30 min</option>
+                            <option value="30-60">30-60 min</option>
+                            <option value="60">Over 60 min</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-sort"><i class="fas fa-sort"></i> Sort by</label>
+                        <select id="filter-sort" class="form-control">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="time-low">Time: Low to High</option>
+                            <option value="time-high">Time: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="recipes-container" class="products-grid">
+                    <!-- Recipes will be filled here via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./js/home.js"></script>
+</body>
+
+</html>
