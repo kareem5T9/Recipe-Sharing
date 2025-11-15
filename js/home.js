@@ -1,4 +1,4 @@
-import {auth, db, signOut, onAuthStateChanged, collection, onSnapshot} from "./firebaseConfigure.js";
+import { auth, db, signOut, onAuthStateChanged, collection, onSnapshot } from "./firebaseConfigure.js";
 
 onAuthStateChanged(auth, (user) => {
     const currentUserName = document.getElementById("currentUserName");
@@ -16,10 +16,10 @@ let allRecipes = [];
 function renderRecipes(snapshot) {
     allRecipes = [];
     recipesContainer.innerHTML = "";
-    
+
     snapshot.forEach((doc) => {
         const data = doc.data();
-        allRecipes.push({id: doc.id, ...data});
+        allRecipes.push({ id: doc.id, ...data });
     });
 
     displayRecipes(allRecipes);
@@ -27,7 +27,7 @@ function renderRecipes(snapshot) {
 
 function displayRecipes(recipes) {
     recipesContainer.innerHTML = "";
-    
+
     if (recipes.length === 0) {
         recipesContainer.innerHTML = '<p style="text-align: center; color: var(--gray); padding: 2rem;">No recipes found. Be the first to add one!</p>';
         return;
@@ -43,7 +43,7 @@ function displayRecipes(recipes) {
                 <p class="recipe-description">${recipe.description}</p>
                 <div class="recipe-meta">
                     <span class="recipe-meta-item"><i class="fas fa-clock"></i> ${recipe.totalTime || (recipe.prepTime + recipe.cookTime)} min</span>
-                    <span class="recipe-meta-item"><i class="fas fa-users"></i> ${recipe.servings} servings</span>
+                    
                 </div>
                 <div class="recipe-footer">
                     <span class="recipe-category">${recipe.category}</span>
@@ -51,12 +51,12 @@ function displayRecipes(recipes) {
                 </div>
             </div>
         `;
-        
+
         // Add click event to navigate to recipe details
         card.addEventListener('click', () => {
             location.href = `recipeDetails.html?id=${recipe.id}`;
         });
-        
+
         recipesContainer.appendChild(card);
     });
 }
@@ -110,7 +110,7 @@ onSnapshot(collection(db, "recipes"), (snapshot) => {
 });
 
 const logOutBtn = document.getElementById("logOut");
-logOutBtn.addEventListener("click", async () => {
+logOutBtn.addEventListener("click", async() => {
     try {
         await signOut(auth);
         location.href = "loginPage.html";
