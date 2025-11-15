@@ -10,14 +10,21 @@
 
 <body>
     <div class="container">
-        <h2>
-            Current User:
-            <span id="currentUserName"></span>
-        </h2>
-
-        <button id="logOut" class="logout-btn">
-            <i class="fas fa-sign-out-alt"></i> Log Out
-        </button>
+        <!-- User Info Section -->
+        <div class="user-section">
+            <div class="user-info-card">
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-details">
+                    <p class="welcome-text">Welcome back!</p>
+                    <h2 class="user-email" id="currentUserName"></h2>
+                </div>
+            </div>
+            <button id="logOut" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Log Out
+            </button>
+        </div>
 
         <!-- Recipes Display Page -->
         <div id="recipes" class="page">
