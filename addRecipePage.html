@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="container">
+        <a href="./home.html" class="btn btn-outline back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+
+        <div class="page">
+            <div class="card">
+                <div class="page-title">
+                    <i class="fas fa-utensils"></i>
+                    <h2>Add New Recipe</h2>
+                </div>
+                
+                <p class="page-description">
+                    Share your delicious recipe with the community
+                </p>
+
+                <div id="currentUserWrapper" class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="currentUserName">Loading...</span>
+                </div>
+
+                <div class="error-message hidden" id="recipe-error">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span></span>
+                </div>
+                
+                <div class="success-message hidden" id="recipe-success">
+                    <i class="fas fa-check-circle"></i>
+                    <span></span>
+                </div>
+
+                <form id="recipe-form">
+                    <div class="form-group">
+                        <label for="recipe-name">
+                            <i class="fas fa-cookie-bite"></i> Recipe Name
+                        </label>
+                        <input 
+                            type="text" 
+                            id="recipe-name" 
+                            class="form-control" 
+                            placeholder="Enter recipe name" 
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipe-description">
+                            <i class="fas fa-align-left"></i> Description
+                        </label>
+                        <textarea 
+                            id="recipe-description" 
+                            class="form-control" 
+                            rows="3" 
+                            placeholder="Brief description" 
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="recipe-preptime">
+                                <i class="fas fa-clock"></i> Prep Time (min)
+                            </label>
+                            <input 
+                                type="number" 
+                                id="recipe-preptime" 
+                                class="form-control" 
+                                min="0" 
+                                placeholder="15" 
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipe-cooktime">
+                                <i class="fas fa-fire"></i> Cook Time (min)
+                            </label>
+                            <input 
+                                type="number" 
+                                id="recipe-cooktime" 
+                                class="form-control" 
+                                min="0" 
+                                placeholder="30" 
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipe-servings">
+                                <i class="fas fa-users"></i> Servings
+                            </label>
+                            <input 
+                                type="number" 
+                                id="recipe-servings" 
+                                class="form-control" 
+                                min="1" 
+                                placeholder="4" 
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipe-category">
+                            <i class="fas fa-list"></i> Category
+                        </label>
+                        <select id="recipe-category" class="form-control" required>
+                            <option value="">Select Category</option>
+                            <option value="breakfast">Breakfast</option>
+                            <option value="lunch">Lunch</option>
+                            <option value="dinner">Dinner</option>
+                            <option value="dessert">Dessert</option>
+                            <option value="snacks">Snacks</option>
+                            <option value="drinks">Drinks</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipe-difficulty">
+                            <i class="fas fa-chart-line"></i> Difficulty
+                        </label>
+                        <select id="recipe-difficulty" class="form-control" required>
+                            <option value="">Select Difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipe-ingredients">
+                            <i class="fas fa-carrot"></i> Ingredients (one per line)
+                        </label>
+                        <textarea 
+                            id="recipe-ingredients" 
+                            class="form-control" 
+                            rows="6" 
+                            placeholder="2 cups flour
+1 cup sugar
+3 eggs
+1 tsp vanilla" 
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipe-instructions">
+                            <i class="fas fa-tasks"></i> Instructions (step by step)
+                        </label>
+                        <textarea 
+                            id="recipe-instructions" 
+                            class="form-control" 
+                            rows="8" 
+                            placeholder="1. Preheat oven to 350°F
+2. Mix dry ingredients
+3. Add wet ingredients
+4. Bake for 30 minutes" 
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipe-image">
+                            <i class="fas fa-image"></i> Recipe Image (Optional)
+                        </label>
+                        <input 
+                            type="file" 
+                            id="recipe-image" 
+                            class="form-control" 
+                            accept="image/*"
+                        >
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-plus"></i> Add Recipe
+                    </button>
+
+                    <button type="reset" class="btn btn-outline btn-full">
+                        <i class="fas fa-eraser"></i> Clear Fields
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./js/addRecipe.js"></script>
+</body>
+</html>
