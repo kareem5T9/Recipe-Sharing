@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="container recipe-details-container">
+        <a href="./home.html" class="btn btn-outline" style="margin: 20px 0; display: inline-block;">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+
+        <button id="logOut" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Log Out
+        </button>
+
+        <!-- Recipe Header -->
+        <div class="recipe-header">
+            <div class="recipe-header-content">
+                <h1 class="recipe-title" id="recipe-title">Loading...</h1>
+                <p class="recipe-subtitle" id="recipe-description">Loading description...</p>
+                <div class="recipe-badges">
+                    <span class="badge" id="recipe-category">
+                        <i class="fas fa-utensils"></i>
+                        <span>Category</span>
+                    </span>
+                    <span class="badge" id="recipe-difficulty">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Difficulty</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe Image -->
+        <img id="recipe-image" class="recipe-main-image" src="https://via.placeholder.com/1000x400/4361ee/ffffff?text=Recipe" alt="Recipe Image">
+
+        <!-- Recipe Stats -->
+        <div class="recipe-stats">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                <div class="stat-value" id="prep-time">0</div>
+                <div class="stat-label">Prep Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-fire"></i></div>
+                <div class="stat-value" id="cook-time">0</div>
+                <div class="stat-label">Cook Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-hourglass-half"></i></div>
+                <div class="stat-value" id="total-time">0</div>
+                <div class="stat-label">Total Time</div>
+            </div>
+
+        </div>
+
+        <!-- Ingredients Section -->
+        <div class="recipe-section">
+            <h2 class="section-title">
+                <i class="fas fa-shopping-basket"></i> Ingredients
+            </h2>
+            <ul class="ingredients-list" id="ingredients-list">
+                <!-- Ingredients will be added here -->
+            </ul>
+        </div>
+
+        <!-- Instructions Section -->
+        <div class="recipe-section">
+            <h2 class="section-title">
+                <i class="fas fa-list-ol"></i> Instructions
+            </h2>
+            <ol class="instructions-list" id="instructions-list">
+                <!-- Instructions will be added here -->
+            </ol>
+        </div>
+
+        <!-- Recipe Author -->
+        <div class="recipe-section">
+            <h2 class="section-title">
+                <i class="fas fa-user-circle"></i> Recipe by
+            </h2>
+            <div class="recipe-author">
+                <div class="author-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="author-info">
+                    <h4 id="recipe-author">Unknown</h4>
+                    <p id="recipe-date">Date unknown</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="btn btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Print Recipe
+            </button>
+            <button class="btn btn-primary" onclick="window.history.back()">
+                <i class="fas fa-arrow-left"></i> Go Back
+            </button>
+        </div>
+    </div>
+
+    <script type="module" src="./js/recipeDetails.js"></script>
+</body>
+
+</html>
