@@ -1,6 +1,6 @@
 /* Import Font Awesome */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 :root {
     --primary: #4361ee;
     --primary-light: #5e7dfa;
@@ -41,7 +41,9 @@ body {
     padding: 0 20px;
 }
 
+
 /* User Section */
+
 .user-section {
     display: flex;
     justify-content: space-between;
@@ -85,7 +87,9 @@ body {
     margin: 0;
 }
 
+
 /* Buttons */
+
 .btn {
     padding: 0.6rem 1.2rem;
     border: none;
@@ -157,7 +161,9 @@ body {
     transform: scale(0.98);
 }
 
+
 /* Pages */
+
 .page {
     min-height: calc(100vh - 180px);
     padding: 2rem 0;
@@ -187,7 +193,9 @@ body {
     color: var(--gray);
 }
 
+
 /* Cards */
+
 .card {
     background-color: white;
     border-radius: var(--border-radius);
@@ -201,7 +209,9 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
+
 /* Forms */
+
 .form-group {
     margin-bottom: 1.4rem;
 }
@@ -235,7 +245,9 @@ body {
     margin-bottom: 1rem;
 }
 
+
 /* Auth Pages */
+
 .auth-container {
     max-width: 500px;
     margin: 0 auto;
@@ -274,7 +286,9 @@ body {
     padding: 0 1rem;
 }
 
+
 /* Messages */
+
 .message {
     padding: 1rem;
     border-radius: var(--border-radius);
@@ -300,7 +314,9 @@ body {
     display: none;
 }
 
+
 /* Products Grid */
+
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -308,7 +324,9 @@ body {
     margin-top: 1.5rem;
 }
 
+
 /* Recipe Cards */
+
 .recipe-card {
     background: white;
     border-radius: 12px;
@@ -405,7 +423,9 @@ body {
     color: #721c24;
 }
 
+
 /* Filters */
+
 .filters {
     display: flex;
     flex-wrap: wrap;
@@ -422,7 +442,9 @@ body {
     min-width: 200px;
 }
 
+
 /* Recipe Details Styles */
+
 .recipe-details-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -445,13 +467,20 @@ body {
     right: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
     animation: pulse 4s ease-in-out infinite;
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.1); opacity: 0.8; }
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
 }
 
 .recipe-header-content {
@@ -464,7 +493,7 @@ body {
     height: 400px;
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     margin-bottom: 2rem;
 }
 
@@ -472,7 +501,7 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .recipe-subtitle {
@@ -495,7 +524,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
 }
 
@@ -511,7 +540,7 @@ body {
     padding: 1.5rem;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
 }
 
@@ -541,7 +570,7 @@ body {
     background: white;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     margin-bottom: 2rem;
 }
 
@@ -687,7 +716,9 @@ body {
 }
 
 @media print {
-    .action-buttons, .logout-btn, .btn-outline {
+    .action-buttons,
+    .logout-btn,
+    .btn-outline {
         display: none !important;
     }
 }
@@ -697,44 +728,38 @@ body {
         flex-direction: column;
         align-items: stretch;
     }
-    
     .user-info-card {
         max-width: 100%;
     }
-    
     .recipe-title {
         font-size: 1.8rem;
     }
-
     .recipe-main-image {
         height: 250px;
     }
-
     .recipe-stats {
         grid-template-columns: repeat(2, 1fr);
     }
-    
     .container {
         padding: 0 15px;
     }
-    
     .page {
         padding: 1.5rem 0;
     }
-    
     .card {
         padding: 1.2rem;
     }
-    
     .auth-container {
         max-width: 100%;
     }
-    
     .products-grid {
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     }
-    
     .filters {
         flex-direction: column;
     }
 }
+
+
+/* the design of recipe details page i already done
+ when i change current user but i forget to mention it in the commit but i mention it now  */
