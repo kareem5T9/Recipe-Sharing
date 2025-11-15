@@ -1,8 +1,8 @@
 import {
-    auth, 
-    db, 
-    onAuthStateChanged, 
-    collection, 
+    auth,
+    db,
+    onAuthStateChanged,
+    collection,
     addDoc
 } from "./firebaseConfigure.js";
 
@@ -24,23 +24,23 @@ recipeForm.addEventListener("submit", async function(e) {
     const description = document.getElementById("recipe-description").value;
     const prepTime = parseInt(document.getElementById("recipe-preptime").value);
     const cookTime = parseInt(document.getElementById("recipe-cooktime").value);
-    const servings = parseInt(document.getElementById("recipe-servings").value);
+
     const category = document.getElementById("recipe-category").value;
     const difficulty = document.getElementById("recipe-difficulty").value;
-    
+
     const ingredientsText = document.getElementById("recipe-ingredients").value;
     const ingredients = ingredientsText.split('\n').filter(function(item) {
         return item.trim() !== '';
     });
-    
+
     const instructionsText = document.getElementById("recipe-instructions").value;
     const instructions = instructionsText.split('\n').filter(function(item) {
         return item.trim() !== '';
     });
-    
+
     const imageFile = document.getElementById("recipe-image").files[0];
 
-    if (!name || !description || !prepTime || !cookTime || !servings || 
+    if (!name || !description || !prepTime || !cookTime || !servings ||
         !category || !difficulty || ingredients.length === 0 || instructions.length === 0) {
         errorEl.style.display = "block";
         errorText.textContent = "Please fill in all required fields.";
@@ -60,7 +60,6 @@ recipeForm.addEventListener("submit", async function(e) {
             prepTime: prepTime,
             cookTime: cookTime,
             totalTime: prepTime + cookTime,
-            servings: servings,
             category: category,
             difficulty: difficulty,
             ingredients: ingredients,
@@ -86,15 +85,14 @@ async function uploadImageToImgBB(file) {
     formData.append("image", file);
 
     const response = await fetch(
-        "https://api.imgbb.com/1/upload?key=" + imgbbApiKey,
-        {
+        "https://api.imgbb.com/1/upload?key=" + imgbbApiKey, {
             method: "POST",
             body: formData
         }
     );
 
     const result = await response.json();
-    
+
     if (result.success) {
         return result.data.url;
     } else {
@@ -104,7 +102,7 @@ async function uploadImageToImgBB(file) {
 
 onAuthStateChanged(auth, function(user) {
     const currentUserName = document.getElementById("currentUserName");
-    
+
     if (user) {
         currentUserName.textContent = user.email;
     } else {
