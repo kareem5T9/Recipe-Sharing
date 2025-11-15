@@ -40,7 +40,7 @@ recipeForm.addEventListener("submit", async function(e) {
 
     const imageFile = document.getElementById("recipe-image").files[0];
 
-    if (!name || !description || !prepTime || !cookTime || !servings ||
+    if (!name || !description || !prepTime || !cookTime ||
         !category || !difficulty || ingredients.length === 0 || instructions.length === 0) {
         errorEl.style.display = "block";
         errorText.textContent = "Please fill in all required fields.";
